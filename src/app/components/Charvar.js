@@ -27,9 +27,10 @@ const Charvar = () => {
         const urls = [
             'https://jsonplaceholder.typicode.com/posts',
             'https://jsonplaceholder.typicode.com/comments',
-            'https://jsonplaceholder.typicode.com/albums',
-            'https://jsonplaceholder.typicode.com/photos',
             'https://jsonplaceholder.typicode.com/todos',
+             'https://jsonplaceholder.typicode.com/albums'
+
+
         ];
         Promise.all(urls.map(url => fetchData(url))).then(dataSets => {
             // Assuming each dataset is an array of objects suitable for the chart
@@ -38,9 +39,9 @@ const Charvar = () => {
     }, []);
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 '>
             {datasets.map((dataset, index) => (
-                <div key={index} className='w-full  h-[400px] min-h-[400px] mb-5 ' >
+                <div key={index} className='w-full  h-[700px] min-h-[700px] mb-5 ' >
                     <ResponsiveContainer width="100%" aspect={4.0 / 3.0}>
                         <BarChart data={dataset}>
                             <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
@@ -48,7 +49,7 @@ const Charvar = () => {
                             <YAxis />
                             <Tooltip content={<CustomTooltip />} />
                             <Legend />
-                            <Bar dataKey="userId" fill="#8884d8" /> {/* Adjust dataKey as needed */}
+                            <Bar type='monotone' dataKey="userId" fill="#8884d8" /> {/* Adjust dataKey as needed */}
                         </BarChart>
                     </ResponsiveContainer>
                 </div>
