@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 
 import { useState } from 'react';
@@ -40,3 +41,17 @@ const Home = () => {
 };
 
 export default Home;
+=======
+import Charvar from './components/Charvar';
+import History from './components/History';
+
+export default function Home() {
+  // Removed the incorrect console.log from the JSX
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <Charvar />
+      <History />
+    </main>
+  );
+}
+>>>>>>> 2e1e9d86843b0de556b5c9c581e45c1177e33c74
