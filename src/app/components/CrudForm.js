@@ -57,18 +57,11 @@ const CrudForm = ({ addItem, updateItem, selectedItem }) => {
         required
         className="border rounded p-2 mb-2"
       />
-      <input
-        type="text"
-        name="price"
-        value={formState.price}
-        onChange={handleChange}
-        placeholder="Price"
-        required
-        className="border rounded p-2 mb-2"
-      />
+     
       <button type="submit" className="bg-blue-500 text-white p-2 rounded">
         {selectedItem ? 'Update' : 'Add'} Item
       </button>
+      
     </form>
   );
 };

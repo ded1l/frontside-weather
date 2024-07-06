@@ -10,7 +10,7 @@ const CrudList = ({ items, deleteItem, selectItem }) => {
               Device name
             </th>
             <th scope="col" className="px-6 py-3">
-            Ip Adress
+            Ip Address
             </th>
             <th scope="col" className="px-6 py-3">
               Location
